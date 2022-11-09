@@ -80,7 +80,7 @@ class _LocationScreenState extends State<LocationScreen> {
                 child: Row(
                   children: [
                     Text(
-                      emperature.toString(),
+                      temperature.toString(),
                       style: kTempTextStyle,
                     ),
                     Text(

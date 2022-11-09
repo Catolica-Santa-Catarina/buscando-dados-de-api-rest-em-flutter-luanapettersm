@@ -14,27 +14,27 @@ class _LoadingScreenState extends State<LoadingScreen> {
   void getData() async {
     var weatherData = await WeatherModel().getLocationWeather();
     pushToLocationScreen(weatherData);
-
+  }
     void pushToLocationScreen(dynamic weatherData) {
       Navigator.push(context, MaterialPageRoute(builder: (context) {
         return LocationScreen(locationWeather: weatherData);
       }));
-  }
+    }
 
-  @override
-  void initState() {
-    super.initState();
-    getData();
-  }
+    @override
+    void initState() {
+      super.initState();
+      getData();
+    }
 
-  @override
-  Widget build(BuildContext context) {
-    getData();
-    return const Center(
-      child: SpinKitDoubleBounce(
-        color: Colors.white,
-        size: 100.0,
-      ),
-    );
+    @override
+    Widget build(BuildContext context) {
+      getData();
+      return const Center(
+        child: SpinKitDoubleBounce(
+          color: Colors.white,
+          size: 100.0,
+        ),
+      );
+    }
   }
-}
